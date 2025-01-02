@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sid Patil's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth scrolling
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Interactive Hero Section
+            const hero = document.querySelector('.hero');
+            hero.addEventListener('mousemove', (e) => {
+                const { offsetX, offsetY } = e;
+                const { clientWidth, clientHeight } = hero;
+
+                const xMove = (offsetX / clientWidth) * 20 - 10;
+                const yMove = (offsetY / clientHeight) * 20 - 10;
+
+                hero.style.backgroundPosition = `${50 + xMove}% ${50 + yMove}%`;
+            });
+
+            // Contact Form Alert
+            const contactButton = document.querySelector('#contact-button');
+            if (contactButton) {
+                contactButton.addEventListener('click', () => {
+                    alert('Thank you for reaching out! I will get back to you soon.');
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Saee Bhanuskar's Portfolio</h1>
+    </header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="hero">
+        <h1>Hi, I'm Saee Bhanuskar</h1>
+        <p>
+            Actively pursuing a Bachelor's degree in Electronics and Computer Science at Pillai HOC College of Engineering and
+            Technology, I am a passionate and ambitious individual with a deep fascination for technology and innovation.As a
+            quick learner with sharp analytical skills, I excel at problem-solving and crafting creative solutions.Driven by
+            unyielding curiosity and a thirst for knowledge, I am constantly exploring the latest advancements in electronics
+            and computing. Currently in my third year, I am delving into cutting-edge technologies, such as IoT, embedded
+            systems, and AI, with the goal of transforming innovative ideas into impactful real-world solutions.
+        </p>
+    </div>
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>
+          I'm Saee Bhanuskar, a passionate Electronics and Computer Science student at Pillai HOC College of Engineering. I
+          thrive at the intersection of innovation and technology, with a strong interest in embedded systems, IoT, and
+          AI-driven solutions. Constantly fueled by curiosity, I enjoy designing intelligent systems, exploring new
+          technologies, and solving complex challenges. Let's collaborate to create smarter, more efficient technologies and
+          shape a connected future together!
+        </p>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <div class="project">
+                <h3>Chat Application</h3>
+                <p>
+                    The SocialX application represents a significant step forward in the development of cross-platform social
+                    networking solutions.
+                </p>
+            </div>
+            <div class="project">
+                <h3>Scientific calculator</h3>
+                <p>
+                    In this project, we will be creating a GUI based scientific calculator using python. The purpose of this
+                    project is to demonstrate how to create a user-friendly calculator that provides a range of advanced
+                    mathematical functions and features.
+                </p>
+            </div>
+            <div class="project">
+                <h3>Egg Catcher Game</h3>
+                <p>
+                   The engaging game, created using Python's Tkinter library,invites players to partcipate in an Interactive
+                   challenge. The main goal is to catch falling eggs with a dynamic blue arc-shaped catcher while avoiding
+                   the depletion of lives.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <p>Email: saee2803@gmail.com</p>
+        <p>Phone: +91 1234567890</p>
+        <button id="contact-button">Send a Message</button>
+    </section>
+
+    <footer>
+        <p>© 2024 Saee Bhanuskar. All Rights Reserved.</p>
+            <a href="https://github.com/Saee2803" target="_blank" rel="noopener noreferrer">
+                <img src="github-logo.png" alt="GitHub" style="width: 20px; height: 20px; vertical-align: middle;">
+                GitHub
+            </a>
+            <br>
+            <a href="https://www.linkedin.com/in/saee-bhanuskar-8a80ba314/" target="_blank" rel="noopener noreferrer">
+                <img src="linkedin.png" alt="LinkedIn" style="width: 20px; height: 20px; vertical-align: middle;">
+                LinkedIn
+            </a>
+    </footer>
+
+</body>
+</html>
